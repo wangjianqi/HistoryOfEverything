@@ -47,6 +47,7 @@ class ThumbnailDetailWidget extends StatelessWidget {
           },
           child: Column(
             children: <Widget>[
+              ///分割线
               hasDivider
                   ? Container(
                       height: 1,
@@ -57,6 +58,7 @@ class ThumbnailDetailWidget extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    ///Image
                     ThumbnailWidget(timelineEntry),
                     Expanded(
                         child: Container(
@@ -64,6 +66,7 @@ class ThumbnailDetailWidget extends StatelessWidget {
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            ///搜索页面字体颜色：两行
                             Text(
                               timelineEntry.label,
                               style: TextStyle(

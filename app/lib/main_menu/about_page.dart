@@ -87,6 +87,7 @@ class AboutPage extends StatelessWidget {
                           text: "Flutter",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
+                              ///下划线
                               decoration: TextDecoration.underline),
                           recognizer: TapGestureRecognizer()
                             ..onTap =

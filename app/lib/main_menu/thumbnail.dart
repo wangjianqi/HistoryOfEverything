@@ -19,6 +19,7 @@ class ThumbnailWidget extends StatelessWidget {
     Widget thumbnail;
     /// Check if the [entry.asset] provided is already a [TimelineImage]. 
     if (asset is TimelineImage) {
+      ///TODO ----
       thumbnail = RawImage(image: asset.image);
     } else if (asset is TimelineNima || asset is TimelineFlare) {
       /// If not, retrieve the image from the Nima/Flare [TimelineAsset], and set it as inactive (i.e. a static image).

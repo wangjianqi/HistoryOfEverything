@@ -11,6 +11,7 @@ import 'package:timeline/main_menu/main_menu.dart';
 class TimelineApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ///竖屏
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return BlocProvider(
       child: MaterialApp(

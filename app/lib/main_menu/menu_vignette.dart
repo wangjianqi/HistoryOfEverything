@@ -15,6 +15,8 @@ import 'package:timeline/timeline/timeline_entry.dart';
 
 /// This widget renders a Flare/Nima [FlutterActor]. It relies on a [LeafRenderObjectWidget] 
 /// so it can implement a custom [RenderObject] and update it accordingly.
+///
+/// LeafRenderObjectWidget
 class MenuVignette extends LeafRenderObjectWidget {
   /// A flag is used to animate the widget only when needed.
   final bool isActive;

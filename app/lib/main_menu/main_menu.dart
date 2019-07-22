@@ -58,6 +58,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
   final FocusNode _searchFocusNode = FocusNode();
   Timer _searchTimer;
 
+  ///销魂定时器
   cancelSearch() {
     if (_searchTimer != null && _searchTimer.isActive) {
       /// Remove old timer.
@@ -94,6 +95,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
       });
       return;
     }
+    ///格式化
     String txt = _searchTextController.text.trim();
     /// Perform search.
     /// 
@@ -145,6 +147,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
     }
   }
 
+  ///跳转
   void _tapSearchResult(TimelineEntry entry) {
     navigateToTimeline(MenuItemData.fromEntry(entry));
   }
@@ -180,11 +183,13 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                   assetId: section.assetId,
                 )))
             .toList(growable: false))
+        ///分割线
         ..add(Container(
           margin: EdgeInsets.only(top: 40.0, bottom: 22),
           height: 1.0,
           color: const Color.fromRGBO(151, 151, 151, 0.29),
         ))
+        ///喜欢
         ..add(FlatButton(
             onPressed: () {
               _pauseSection();
@@ -211,7 +216,9 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                     color: Colors.black.withOpacity(0.65)),
               )
             ])))
+        ///share
         ..add(FlatButton(
+          ///分享
             onPressed: () => Share.share(
                 "Check out The History of Everything! " + (Platform.isAndroid ? "https://play.google.com/store/apps/details?id=com.twodimensions.timeline" : "itms://itunes.apple.com/us/app/apple-store/id1441257460?mt=8")),
             color: Colors.transparent,
@@ -232,6 +239,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                     color: Colors.black.withOpacity(0.65)),
               )
             ])))
+        ///about
         ..add(Padding(
           padding: const EdgeInsets.only(bottom: 30.0),
           child: FlatButton(
@@ -279,6 +287,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
+                      ///动画
                           Collapsible(
                               isCollapsed: _isSearching,
                               child: Column(
@@ -300,11 +309,13 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                                             fontSize: 34.0,
                                             fontFamily: "RobotoMedium"))
                                   ])),
+                          ///搜索
                           Padding(
                               padding: EdgeInsets.only(top: 22.0),
                               child: SearchWidget(
                                   _searchFocusNode, _searchTextController))
                         ] +
+                        ///折叠widget
                         tail)),
           )),
     );

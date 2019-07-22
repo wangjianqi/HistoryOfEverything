@@ -123,17 +123,21 @@ class _SectionState extends State<MenuSection>
                     Positioned.fill(
                         left: 0,
                         top: 0,
+                        ///背景颜色
                         child: MenuVignette(
                             gradientColor: widget.backgroundColor,
                             isActive: widget.isActive,
                             assetId: widget.assetId)),
                     Column(children: <Widget>[
+                      ///上部widget
                       Container(
                           height: 150.0,
+//                          color: Colors.redAccent,
                           alignment: Alignment.bottomCenter,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
+                              ///折叠按钮
                               Container(
                                   height: 21.0,
                                   width: 21.0,
@@ -145,6 +149,7 @@ class _SectionState extends State<MenuSection>
                                       color: widget.accentColor,
                                       animation:
                                           _isExpanded ? "Collapse" : "Expand")),
+                              ///折叠行的文本
                               Text(
                                 widget.title,
                                 style: TextStyle(
@@ -154,6 +159,7 @@ class _SectionState extends State<MenuSection>
                               )
                             ],
                           )),
+                      ///动画
                       SizeTransition(
                           axisAlignment: 0.0,
                           axis: Axis.vertical,
@@ -165,6 +171,7 @@ class _SectionState extends State<MenuSection>
                                   child: Column(
                                       children: widget.menuOptions.map((item) {
                                     return GestureDetector(
+                                      ///TODO ----
                                         behavior: HitTestBehavior.opaque,
                                         onTap: () => widget.navigateTo(item),
                                         child: Row(
@@ -175,6 +182,7 @@ class _SectionState extends State<MenuSection>
                                                   child: Container(
                                                       margin: EdgeInsets.only(
                                                           bottom: 20.0),
+                                                      ///展开行的文本
                                                       child: Text(
                                                         item.label,
                                                         style: TextStyle(
@@ -184,6 +192,7 @@ class _SectionState extends State<MenuSection>
                                                             fontFamily:
                                                                 "RobotoMedium"),
                                                       ))),
+                                              ///箭头
                                               Container(
                                                   alignment: Alignment.center,
                                                   child: Image.asset(
